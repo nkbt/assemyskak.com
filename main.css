@@ -1,0 +1,20 @@
+body {
+  min-height: 300vw;
+  background: #fff url(bg.png) no-repeat scroll 0 0;
+  background-position: 0 -20vw;
+  background-size: 120vw;
+}
+
+@media all and (max-width: 768px) {
+  body {
+    background-position: 0 -155px;
+    background-size: 930px;
+  }
+}
+
+@media all and (min-width: 1400px) {
+  body {
+    background-position: 0 -270px;
+    background-size: 1650px;
+  }
+}
