@@ -189,7 +189,7 @@ body.lock {
   width: 100vw;
   height: 100vh;
   transition: all var(--animation-duration), border-radius 300ms ease 200ms;
-  pointer-events: initial;
+  pointer-events: all;
   opacity: 1;
   border-radius: 0;
 }
