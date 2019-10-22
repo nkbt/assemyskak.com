@@ -4,13 +4,18 @@
 
 html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1vw
+  font-size: 1vw;
 }
+
 
 @media all and (min-width: 1000px) {
   html {
     font-size: 10px;
   }
+}
+
+body {
+  overflow-x: hidden;
 }
 
 body.lock {
@@ -54,7 +59,7 @@ body.lock {
 
 .project[data-project="1"] {
   top: 55rem;
-  left: 80rem;
+  left: 73rem;
 }
 
 .project > a {
