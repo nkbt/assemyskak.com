@@ -31,7 +31,7 @@ body.lock {
   right: 0;
   width: 100%;
   height: 100%;
-  min-height: 300rem;
+  min-height: 380rem;
   transition: filter var(--animation-duration);
   pointer-events: none;
   background: #fff url(bg.png) no-repeat scroll 0 -20rem;
@@ -53,8 +53,8 @@ body.lock {
 }
 
 .project[data-project="1"] {
-  top: 80rem;
-  left: 70rem;
+  top: 55rem;
+  left: 80rem;
 }
 
 .project > a {
@@ -163,8 +163,8 @@ body.lock {
 }
 
 .opened [data-work="3"] > a {
-  top: 19rem;
-  left: 3rem;
+  top: 17rem;
+  left: 2rem;
 }
 
 #popup {
