@@ -1,46 +1,50 @@
-body {
+:root {
+  --animation-duration: 500ms;
+}
+
+html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1vw
+}
+
+@media all and (min-width: 1000px) {
+  html {
+    font-size: 10px;
+  }
 }
 
 body.lock {
   overflow: hidden;
 }
 
-.bg {
+#app {
+  position: relative;
+  width: 100vw;
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+#bg {
   position: absolute;
   z-index: -1;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  min-height: 300vw;
-  transition: filter 500ms;
+  min-height: 300rem;
+  transition: filter var(--animation-duration);
   pointer-events: none;
-  background: #fff url(bg.png) no-repeat scroll 0 -20vw;
-  background-size: 120vw;
+  background: #fff url(bg.png) no-repeat scroll 0 -20rem;
+  background-size: 120rem;
 }
 
-.lock .bg {
+.lock #bg {
   filter: blur(20px);
-}
-
-@media all and (max-width: 768px) {
-  .bg {
-    background-position: 0 -155px;
-    background-size: 930px;
-  }
-}
-
-@media all and (min-width: 1400px) {
-  .bg {
-    background-position: 0 -270px;
-    background-size: 1650px;
-  }
 }
 
 .project {
   position: absolute;
-  transition: opacity 500ms;
+  transition: opacity var(--animation-duration);
   opacity: 1;
 }
 
@@ -49,32 +53,32 @@ body.lock {
 }
 
 .project[data-project="1"] {
-  top: 80vw;
-  left: 70vw;
+  top: 80rem;
+  left: 70rem;
 }
 
 .project > a {
-  line-height: 20vw;
+  line-height: 20rem;
   position: absolute;
   overflow: hidden;
-  width: 20vw;
-  height: 20vw;
-  margin-top: -10vw;
-  margin-left: -10vw;
-  transition: all 500ms;
+  width: 20rem;
+  height: 20rem;
+  margin-top: -10rem;
+  margin-left: -10rem;
+  transition: all var(--animation-duration);
   animation: wobble 5s infinite;
   text-align: center;
   opacity: 1;
-  border-radius: 10vw;
+  border-radius: 10rem;
   background: #ffd838aa;
 }
 
 .project.opened > a {
   line-height: 0;
-  width: 5vw;
-  height: 5vw;
-  margin-top: -2.5vw;
-  margin-left: -2.5vw;
+  width: 5rem;
+  height: 5rem;
+  margin-top: -2.5rem;
+  margin-left: -2.5rem;
   animation: none;
   opacity: 0.5;
 }
@@ -98,21 +102,20 @@ body.lock {
   height: 0;
   margin-top: 0;
   margin-left: 0;
-  transition: all 500ms;
+  transition: all var(--animation-duration);
   text-align: center;
   opacity: 0;
-  border-radius: 8vw;
-  background: #ffd838aa;
+  border-radius: 8rem;
 }
 
 
 .opened [data-work] > a {
-  line-height: 16vw;
-  width: 16vw;
-  height: 16vw;
-  margin-top: -8vw;
-  margin-left: -8vw;
-  animation: wobble 5s infinite;
+  line-height: 16rem;
+  width: 16rem;
+  height: 16rem;
+  margin-top: -8rem;
+  margin-left: -8rem;
+  animation: wobble 8s infinite;
   opacity: 1;
 }
 
@@ -137,22 +140,34 @@ body.lock {
   }
 }
 
+[data-work="1"] > a {
+  background: #eeab99aa;
+}
+
+[data-work="2"] > a {
+  background: #bd86c4aa;
+}
+
+[data-work="3"] > a {
+  background: #ffd838aa;
+}
+
 .opened [data-work="1"] > a {
-  top: 6vw;
-  left: -15vw;
+  top: 6rem;
+  left: -15rem;
 }
 
 .opened [data-work="2"] > a {
-  top: 4vw;
-  left: 16vw;
+  top: 4rem;
+  left: 16rem;
 }
 
 .opened [data-work="3"] > a {
-  top: 19vw;
-  left: 3vw;
+  top: 19rem;
+  left: 3rem;
 }
 
-.popup {
+#popup {
   position: fixed;
   display: flex;
   overflow: hidden;
@@ -163,23 +178,22 @@ body.lock {
   height: 0;
   pointer-events: none;
   opacity: 0;
-  border-radius: 50vw;
-  background: #ffffff55;
+  border-radius: 50vmax;
 }
 
-.popup.animated {
-  transition: all 500ms, border-radius 300ms ease 0ms;
+#popup.animated {
+  transition: all var(--animation-duration), border-radius 300ms ease 0ms;
 }
 
-.popup.opened {
+#popup.opened {
   width: 100vw;
   height: 100vh;
-  transition: all 500ms, border-radius 300ms ease 200ms;
+  transition: all var(--animation-duration), border-radius 300ms ease 200ms;
   pointer-events: initial;
   opacity: 1;
   border-radius: 0;
 }
 
-.popup .content {
+#popup .content {
 
 }

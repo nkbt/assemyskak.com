@@ -22,15 +22,7 @@ const subscribe = (eventName, selector, callback) => {
 };
 
 
-const popup = document.querySelector('.popup');
-
-
-//subscribe('click', 'body', (event, el) => {
-//  if (el === event.target) {
-//    el.querySelectorAll('[data-project].opened')
-//      .forEach(works => works.classList.remove('opened'));
-//  }
-//});
+const popup = document.querySelector('#popup');
 
 
 subscribe('click', '[data-project] > a', (event, el) => {
@@ -45,16 +37,16 @@ subscribe('click', '[data-work] > a', (event, el) => {
 
   document.body.classList.add('lock');
 
-  const work = lookup(el, '[data-work]');
-  const project = lookup(work, '[data-project]');
-
-  popup.querySelector('.content').innerHTML = `Project ${project.dataset.project}, Work ${work.dataset.work}`;
+  // const work = lookup(el, '[data-work]');
+  // const project = lookup(work, '[data-project]');
+  // popup.querySelector('.content').innerHTML = `Project ${project.dataset.project}, Work ${work.dataset.work}`;
 
   const {x, y} = event;
   popup.classList.remove('animated');
   requestAnimationFrame(() => {
     popup.style.top = `${y}px`;
     popup.style.left = `${x}px`;
+    popup.style.backgroundColor = getComputedStyle(el).backgroundColor;
     requestAnimationFrame(() => {
       popup.classList.add('animated');
       popup.style.top = `0px`;
@@ -65,8 +57,9 @@ subscribe('click', '[data-work] > a', (event, el) => {
 });
 
 
-subscribe('click', '.popup', (event, el) => {
+subscribe('click', '#popup', (event, el) => {
   event.preventDefault();
+
   const {x, y} = event;
   popup.style.top = `${y}px`;
   popup.style.left = `${x}px`;
