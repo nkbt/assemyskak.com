@@ -39,8 +39,8 @@ body.lock {
   min-height: 380rem;
   transition: filter var(--animation-duration);
   pointer-events: none;
-  background: #fff url(bg.png) no-repeat scroll 0 -20rem;
-  background-size: 120rem;
+  background: #fff url(bg.gif) no-repeat scroll 2rem 2rem;
+  background-size: 80rem;
 }
 
 .lock #bg {
