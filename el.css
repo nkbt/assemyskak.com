@@ -1,0 +1,52 @@
+.moons {
+  display: flex;
+}
+
+.moons .moon {
+  margin: 1em;
+}
+
+.moon {
+  display: block;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 100ms;
+  animation: rocking 1s infinite linear;
+  animation-play-state: paused;
+  color: #efda63;
+}
+
+.moon:hover {
+  animation-play-state: running;
+}
+
+.moon-50 svg {
+  transform: rotate(50deg);
+}
+
+.moon-320 svg {
+  transform: rotate(320deg);
+}
+
+.moon-90 svg {
+  transform: rotate(90deg);
+}
+
+@keyframes rocking {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
