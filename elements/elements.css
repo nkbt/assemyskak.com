@@ -1,5 +1,7 @@
 .moons {
   display: flex;
+  justify-content: center;
+  margin: 2vw;
 }
 
 .moons .moon {
@@ -59,6 +61,7 @@
   box-sizing: border-box;
   width: 30vw;
   height: 30vw;
+  margin: 2vw auto;
   padding: 2.5vw;
 }
 
@@ -82,4 +85,36 @@
 
 .photo .frame .fill {
   fill: #f4a988;
+}
+
+.moon-full {
+  font-size: 6vw;
+  font-weight: 200;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 40vw;
+  height: 40vw;
+  margin: 2vw auto;
+  text-transform: lowercase;
+}
+
+.moon-full svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.moon-full .fill {
+  fill: #efda63;
+}
+
+.moon-full span {
+  position: relative;
 }

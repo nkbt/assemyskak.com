@@ -5,6 +5,8 @@
 html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1vw;
+  color: #333;
+  font-kerning: normal;
 }
 
 @media all and (min-width: 1000px) {
