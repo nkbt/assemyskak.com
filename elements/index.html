@@ -6,37 +6,46 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Assem Yskak</title>
-    <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="el.css" />
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./elements.css" />
   </head>
   <body>
     <div id="app">
       <div class="moons">
         <a href="#" class="moon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-            <use xlink:href="./img/moon.svg#moon" />
+            <use xlink:href="../img/moon.svg#moon" class="fill" />
           </svg>
         </a>
 
         <a href="#" class="moon moon-50">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-            <use xlink:href="./img/moon.svg#moon" />
+            <use xlink:href="../img/moon.svg#moon" class="fill" />
           </svg>
         </a>
 
         <a href="#" class="moon moon-320">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-            <use xlink:href="./img/moon.svg#moon" />
+            <use xlink:href="../img/moon.svg#moon" class="fill" />
           </svg>
         </a>
 
         <a href="#" class="moon moon-90">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-            <use xlink:href="./img/moon.svg#moon" />
+            <use xlink:href="../img/moon.svg#moon" class="fill" />
           </svg>
         </a>
       </div>
+
+      <div class="photo">
+        <img alt="Assem Yskak" src="../img/assem.jpg" width="600" height="600" />
+        <svg class="frame" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <use xlink:href="../img/frame.svg#frame" class="fill" />
+          <use xlink:href="../img/frame.svg#background" class="background" />
+        </svg>
+      </div>
     </div>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150639557-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];

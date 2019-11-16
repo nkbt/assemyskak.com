@@ -7,7 +7,6 @@ html {
   font-size: 1vw;
 }
 
-
 @media all and (min-width: 1000px) {
   html {
     font-size: 10px;
@@ -88,7 +87,6 @@ body.lock {
   opacity: 0.5;
 }
 
-
 .works {
   position: absolute;
 }
@@ -112,7 +110,6 @@ body.lock {
   opacity: 0;
   border-radius: 8rem;
 }
-
 
 .opened [data-work] > a {
   line-height: 16rem;
