@@ -40,7 +40,7 @@ body.lock {
   min-height: 380rem;
   transition: filter var(--animation-duration);
   pointer-events: none;
-  background: #fff url(bg.gif) no-repeat scroll 2rem 2rem;
+  background: #fff url("./img/girl.gif") no-repeat scroll 2rem 2rem;
   background-size: 80rem;
 }
 
@@ -77,6 +77,10 @@ body.lock {
   opacity: 1;
   border-radius: 10rem;
   background: #ffd838aa;
+}
+
+.project > a:hover {
+  animation-play-state: paused;
 }
 
 .project.opened > a {
@@ -121,6 +125,10 @@ body.lock {
   margin-left: -8rem;
   animation: wobble 8s infinite;
   opacity: 1;
+}
+
+.opened [data-work] > a:hover {
+  animation-play-state: paused;
 }
 
 @keyframes wobble {
