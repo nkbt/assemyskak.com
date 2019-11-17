@@ -1,6 +1,6 @@
 .moons {
   display: flex;
-  margin: 2vw;
+  margin: 2rem;
 }
 
 .moons .moon {
@@ -37,12 +37,11 @@
   transform: rotate(90deg);
 }
 
-
 .name {
   position: relative;
   box-sizing: border-box;
-  width: 30vw;
-  margin: 2vw;
+  width: 30rem;
+  margin: 2rem;
 }
 
 .name svg {
@@ -51,37 +50,13 @@
 
 .photo {
   position: relative;
-  box-sizing: border-box;
-  width: 50vw;
-  height: 50vw;
-  margin: 2vw;
-  padding: 2.5vw;
-}
-
-.photo img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-
-.photo svg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.photo svg .background {
-  fill: #fff;
-}
-
-.photo svg .fill {
-  fill: #f4a988;
+  width: 50rem;
+  height: 50rem;
+  margin: 2rem;
 }
 
 .moon-full {
-  font-size: 6vw;
+  font-size: 6rem;
   font-weight: 200;
   position: relative;
   display: flex;
@@ -90,9 +65,9 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  width: 40vw;
-  height: 40vw;
-  margin: 2vw;
+  width: 40rem;
+  height: 40rem;
+  margin: 2rem;
   text-transform: lowercase;
 }
 
@@ -115,9 +90,9 @@
 .moon-half {
   position: relative;
   overflow: hidden;
-  width: 20vw;
-  height: 20vw;
-  margin: 2vw;
+  width: 20rem;
+  height: 20rem;
+  margin: 2rem;
 }
 
 .moon-half svg {
