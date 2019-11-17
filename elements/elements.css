@@ -128,3 +128,23 @@
 .moon-full span {
   position: relative;
 }
+
+.moon-half {
+  position: relative;
+  overflow: hidden;
+  width: 20vw;
+  height: 20vw;
+  margin: 2vw;
+}
+
+.moon-half svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.moon-half .fill {
+  fill: #efda63;
+}
