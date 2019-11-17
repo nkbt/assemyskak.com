@@ -209,3 +209,61 @@ body.lock {
 #popup .content {
 
 }
+
+.about {
+  position: absolute;
+  top: 10vw;
+  right: 10vw;
+}
+
+.about .name {
+  position: absolute;
+  right: 0;
+  box-sizing: border-box;
+  width: 30vw;
+  margin: 2vw;
+  padding-top: 8vw;
+}
+
+.about .name svg {
+}
+
+.about .name svg .fill {
+  fill: #333;
+}
+
+.about .name .moon {
+  position: absolute;
+  top: 0;
+  right: 4vw;
+  display: block;
+  width: 7.5vw;
+  animation: rocking 1s infinite linear;
+  animation-play-state: paused;
+}
+
+.about .name .moon .fill {
+  fill: #efda63;
+}
+
+.about .name:hover .moon {
+  animation-play-state: running;
+}
+
+@keyframes rocking {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
