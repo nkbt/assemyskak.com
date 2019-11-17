@@ -46,7 +46,8 @@ subscribe('click', '[data-work] > a', (event, el) => {
   requestAnimationFrame(() => {
     popup.style.top = `${y}px`;
     popup.style.left = `${x}px`;
-    popup.style.backgroundColor = getComputedStyle(el).backgroundColor;
+    const fill = el.querySelector('.frame .fill');
+    popup.style.backgroundColor = getComputedStyle(fill).fill;
     requestAnimationFrame(() => {
       popup.classList.add('animated');
       popup.style.top = `0px`;
