@@ -271,13 +271,18 @@ body.lock {
   position: absolute;
   top: 22rem;
   right: 0;
-  box-sizing: border-box;
   width: 25rem;
   height: 25rem;
+}
+
+.photo .img {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
   padding: 2.5rem;
 }
 
-.photo img {
+.photo .img img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
