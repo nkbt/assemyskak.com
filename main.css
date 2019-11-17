@@ -40,7 +40,7 @@ body.lock {
   min-height: 380rem;
   transition: filter var(--animation-duration);
   pointer-events: none;
-  background: #fff url("./img/girl.gif") no-repeat scroll 2rem 2rem;
+  background: #fff url("./img/girl.gif") no-repeat scroll 4rem 7rem;
   background-size: 80rem;
 }
 
@@ -59,8 +59,8 @@ body.lock {
 }
 
 .project[data-project="1"] {
-  top: 55rem;
-  left: 73rem;
+  top: 90rem;
+  left: 65rem;
 }
 
 .project > a {
@@ -212,17 +212,16 @@ body.lock {
 
 .about {
   position: absolute;
-  top: 10vw;
-  right: 10vw;
+  top: 10rem;
+  right: 10rem;
 }
 
 .about .name {
   position: absolute;
   right: 0;
   box-sizing: border-box;
-  width: 30vw;
-  margin: 2vw;
-  padding-top: 8vw;
+  width: 30rem;
+  padding-top: 8rem;
 }
 
 .about .name svg {
@@ -235,9 +234,9 @@ body.lock {
 .about .name .moon {
   position: absolute;
   top: 0;
-  right: 4vw;
+  right: 4rem;
   display: block;
-  width: 7.5vw;
+  width: 8rem;
   animation: rocking 1s infinite linear;
   animation-play-state: paused;
 }
