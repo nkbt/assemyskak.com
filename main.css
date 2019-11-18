@@ -38,7 +38,7 @@ body.lock {
   opacity: 1;
 }
 
-#bg {
+#girl {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -49,6 +49,40 @@ body.lock {
   pointer-events: none;
   background: #fff url("./img/girl.png") no-repeat scroll 1rem 15rem;
   background-size: 60rem;
+}
+
+#girl-blink {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 260rem;
+  transition: opacity 200ms;
+  pointer-events: none;
+  opacity: 0;
+  background: transparent url("./img/girl-blink.png") no-repeat scroll 1rem 15rem;
+  background-size: 60rem;
+}
+
+.blink {
+  animation: blink 500ms ease-in;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .lock #app {

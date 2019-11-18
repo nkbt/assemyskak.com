@@ -24,7 +24,7 @@ const rgb2hex = (rgb) => {
 
 const lookup = (el, selector) => {
   let _el = el;
-  while (_el && !_el.matches(selector)) {
+  while (_el && _el.matches && !_el.matches(selector)) {
     if (_el.parentElement === document) {
       return null;
     }
@@ -94,3 +94,17 @@ subscribe('click', '#popup', (event, el) => {
   document.body.classList.remove('lock');
 });
 
+const mood = document.querySelector('#girl-blink');
+const onScroll = () => {
+  mood.classList.toggle('blink', Math.round(scrollY / 150) === 1);
+};
+
+let timer = null;
+addEventListener('scroll', () => {
+  if (!timer) {
+    timer = requestAnimationFrame(() => {
+      onScroll();
+      timer = null;
+    });
+  }
+});
