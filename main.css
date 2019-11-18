@@ -80,7 +80,7 @@ body.lock {
 }
 
 .moon-full span {
-  font-size: 4rem;
+  font-size: 3.3rem;
   font-weight: 200;
   position: relative;
   transition: opacity var(--animation-duration);
@@ -128,6 +128,10 @@ body.lock {
   animation-play-state: paused;
 }
 
+.lock .project > a svg {
+  animation-play-state: paused;
+}
+
 .project.opened > a span {
   opacity: 0;
 }
@@ -139,7 +143,18 @@ body.lock {
 .opened .works {
 }
 
-[data-work] > a {
+.work .label {
+  font-size: 1.7rem;
+  position: absolute;
+  right: 0;
+  bottom: 2.4rem;
+  left: 0;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  background: #ffffffcc;
+}
+
+.work > a {
   line-height: 0;
   position: absolute;
   top: 0;
@@ -156,8 +171,7 @@ body.lock {
   border-radius: 8rem;
 }
 
-.opened [data-work] > a {
-  line-height: 16rem;
+.opened .work > a {
   width: 16rem;
   height: 16rem;
   margin-top: -8rem;
@@ -167,7 +181,11 @@ body.lock {
   background: #ffffffaa;
 }
 
-.opened [data-work] > a:hover {
+.opened .work > a:hover {
+  animation-play-state: paused;
+}
+
+.lock .work > a {
   animation-play-state: paused;
 }
 
@@ -192,11 +210,11 @@ body.lock {
   }
 }
 
-[data-work] > a svg .background {
+.work > a svg .background {
   fill: none;
 }
 
-[data-work] > a .img svg {
+.work > a .img svg {
   top: 20%;
   left: 15%;
   width: 40%;
@@ -204,43 +222,51 @@ body.lock {
   transform: rotate(0);
 }
 
-[data-work="1"] > a svg {
+.work > a .img {
+  padding: 0.5rem;
+}
+
+[data-work="kz"] > a svg {
   transform: rotate(20deg);
 }
 
-[data-work="1"] > a svg .fill {
-  fill: #eeab99aa;
+[data-work="kz"] > a svg .fill {
+  fill: #eeab99;
 }
 
-[data-work="2"] > a svg {
-  transform: rotate(1000deg);
+.work[data-work="kz"] .label {
+  bottom: 3.1rem;
 }
 
-[data-work="2"] > a svg .fill {
-  fill: #bd86c4aa;
-}
-
-[data-work="3"] > a svg {
+[data-work="names"] > a svg {
   transform: rotate(200deg);
 }
 
-[data-work="3"] > a svg .fill {
-  fill: #ffd838aa;
+[data-work="names"] > a svg .fill {
+  fill: #ffed8a;
 }
 
-.opened [data-work="1"] > a {
+[data-work="fashion"] > a svg {
+  transform: rotate(1000deg);
+}
+
+[data-work="fashion"] > a svg .fill {
+  fill: #bd86c4;
+}
+
+.opened [data-work="kz"] > a {
   top: 6rem;
   left: -15rem;
 }
 
-.opened [data-work="2"] > a {
-  top: 4rem;
-  left: 16rem;
-}
-
-.opened [data-work="3"] > a {
+.opened [data-work="names"] > a {
   top: 17rem;
   left: 2rem;
+}
+
+.opened [data-work="fashion"] > a {
+  top: 4rem;
+  left: 16rem;
 }
 
 #popup {
@@ -344,6 +370,7 @@ body.lock {
 }
 
 .photo .img {
+  display: block;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
