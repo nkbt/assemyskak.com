@@ -145,14 +145,23 @@ body.lock {
 .opened .works {
 }
 
+.work {
+  pointer-events: none;
+}
+
+.opened .work {
+  pointer-events: all;
+}
+
 .work .label {
   font-size: 1.7rem;
+  font-weight: 200;
   position: absolute;
-  right: 0;
-  bottom: 2.4rem;
-  left: 0;
-  padding: 1rem 0.5rem;
-  text-align: center;
+  bottom: -2.7rem;
+  margin-left: -1.4rem;
+  padding: 1.2rem 0.5rem;
+  text-align: right;
+  border-radius: 0.5rem;
   background: #ffffffcc;
 }
 
@@ -162,7 +171,6 @@ body.lock {
   top: 0;
   left: 0;
   display: block;
-  overflow: hidden;
   width: 0;
   height: 0;
   margin-top: 0;
@@ -234,10 +242,6 @@ body.lock {
 
 [data-work="kz"] > a svg .fill {
   fill: #eeab99;
-}
-
-.work[data-work="kz"] .label {
-  bottom: 3.1rem;
 }
 
 [data-work="names"] > a svg {
