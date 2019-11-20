@@ -1,4 +1,4 @@
-const DEFAULT_TITLE = document.querySelector('head title').innerHTML;
+const DEFAULT_TITLE = document.title;
 const DEFAULT_URL = document.location.pathname;
 
 
@@ -50,11 +50,6 @@ const subscribe = (eventName, selector, callback) => {
 };
 
 
-const updateTitle = string => {
-  document.querySelector('head title').innerHTML = string || DEFAULT_TITLE;
-};
-
-
 const popup = document.querySelector('#popup');
 
 
@@ -75,43 +70,30 @@ const getContent = async ident => {
   const doc = new DOMParser().parseFromString(content, 'text/html');
   const app = doc.querySelector(`#${ident}`);
   if (app) {
-    updateTitle();
     cache[ident] = {
       title: doc.querySelector('head title').innerHTML,
       content: app.outerHTML
     };
   } else {
-    cache[ident] = {};
+    cache[ident] = {title: DEFAULT_TITLE, content: ''};
   }
 
   return cache[ident];
 };
 
 
-subscribe('click', '[data-work] > a', async (event, el) => {
-  event.preventDefault();
-
+const workOpen = async ({project, work, x, y, fill}) => {
   document.body.classList.add('lock');
+  popup.style.backgroundColor = fill || 'transparent';
 
-  const workEl = lookup(el, '[data-work]');
-  const projectEl = lookup(workEl, '[data-project]');
-
-  const work = workEl.dataset.work;
-  const project = projectEl.dataset.project;
   const {content, title} = await getContent(`${project}-${work}`);
-  updateTitle(title);
+  document.title = title;
   popup.innerHTML = content;
 
-  const url = new URL(el.href);
-  history.pushState({}, title, url.pathname);
-
-  const {x, y} = event;
   popup.classList.remove('animated');
   requestAnimationFrame(() => {
     popup.style.top = `${y}px`;
     popup.style.left = `${x}px`;
-    const fill = el.querySelector('.frame .fill');
-    popup.style.backgroundColor = getComputedStyle(fill).fill;
     requestAnimationFrame(() => {
       popup.classList.add('animated');
       popup.style.top = `0px`;
@@ -119,6 +101,32 @@ subscribe('click', '[data-work] > a', async (event, el) => {
       popup.classList.add('opened');
     });
   });
+};
+
+const workClose = ({x, y}) => {
+  popup.style.top = `${y}px`;
+  popup.style.left = `${x}px`;
+  popup.classList.remove('opened');
+
+  document.body.classList.remove('lock');
+  document.title = DEFAULT_TITLE;
+};
+
+
+subscribe('click', '[data-work] > a', async (event, el) => {
+  event.preventDefault();
+
+  const {x, y} = event;
+
+  const workEl = lookup(el, '[data-work]');
+  const projectEl = lookup(workEl, '[data-project]');
+
+  const work = workEl.dataset.work;
+  const project = projectEl.dataset.project;
+
+  const fill = getComputedStyle(el.querySelector('.frame .fill')).fill;
+  await workOpen({project, work, x, y, fill});
+  history.pushState({project, work, x, y, fill}, document.title, `./${project}-${work}.html`);
 });
 
 
@@ -126,15 +134,8 @@ subscribe('click', '#popup', event => {
   event.preventDefault();
 
   const {x, y} = event;
-  popup.style.top = `${y}px`;
-  popup.style.left = `${x}px`;
-  popup.classList.remove('opened');
-
-  document.body.classList.remove('lock');
-
-  updateTitle();
-
-  history.pushState({}, DEFAULT_TITLE, DEFAULT_URL);
+  workClose({x, y});
+  history.pushState({x, y}, DEFAULT_TITLE, DEFAULT_URL);
 });
 
 const mood = document.querySelector('#girl-blink');
@@ -154,5 +155,10 @@ addEventListener('scroll', () => {
 
 
 window.onpopstate = function (event) {
-  // TODO: Handle browser navigation
+  const {project, work, x = 0, y = 0, fill} = event.state;
+  if (project && work) {
+    workOpen({project, work, x, y, fill});
+  } else {
+    workClose({x, y});
+  }
 };
