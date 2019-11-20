@@ -92,8 +92,8 @@ const workOpen = async ({project, work, x, y, fill}) => {
 
   popup.classList.remove('animated');
   requestAnimationFrame(() => {
-    popup.style.top = `${y}px`;
-    popup.style.left = `${x}px`;
+    popup.style.top = y ? `${y}px` : '0px';
+    popup.style.left = x ? `${x}px` : '0px';
     requestAnimationFrame(() => {
       popup.classList.add('animated');
       popup.style.top = `0px`;
@@ -104,8 +104,8 @@ const workOpen = async ({project, work, x, y, fill}) => {
 };
 
 const workClose = ({x, y}) => {
-  popup.style.top = `${y}px`;
-  popup.style.left = `${x}px`;
+  popup.style.top = y ? `${y}px` : '0px';
+  popup.style.left = x ? `${x}px` : '0px';
   popup.classList.remove('opened');
 
   document.body.classList.remove('lock');
@@ -155,7 +155,12 @@ addEventListener('scroll', () => {
 
 
 window.onpopstate = function (event) {
-  const {project, work, x = 0, y = 0, fill} = event.state;
+  if (!event.state || typeof event.state !== 'object') {
+    workClose({x: 0, y: 0});
+    return;
+  }
+
+  const {project, work, x, y, fill} = event.state;
   if (project && work) {
     workOpen({project, work, x, y, fill});
   } else {
