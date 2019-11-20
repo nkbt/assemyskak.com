@@ -1,3 +1,7 @@
+const DEFAULT_TITLE = document.querySelector('head title').innerHTML;
+const DEFAULT_URL = document.location.pathname;
+
+
 const rgb2hex = (rgb) => {
   // Choose correct separator
   const sep = rgb.indexOf(",") > -1 ? "," : " ";
@@ -46,8 +50,8 @@ const subscribe = (eventName, selector, callback) => {
 };
 
 
-const updateTitle = (string = 'Assem Yskak') => {
-  document.querySelector('head title').innerHTML = string;
+const updateTitle = string => {
+  document.querySelector('head title').innerHTML = string || DEFAULT_TITLE;
 };
 
 
@@ -61,6 +65,29 @@ subscribe('click', '[data-project] > a', (event, el) => {
 });
 
 
+const cache = {};
+const getContent = async ident => {
+  if (ident in cache) {
+    return cache[ident];
+  }
+
+  const content = await (await fetch(`./${ident}.html`)).text();
+  const doc = new DOMParser().parseFromString(content, 'text/html');
+  const app = doc.querySelector(`#${ident}`);
+  if (app) {
+    updateTitle();
+    cache[ident] = {
+      title: doc.querySelector('head title').innerHTML,
+      content: app.outerHTML
+    };
+  } else {
+    cache[ident] = {};
+  }
+
+  return cache[ident];
+};
+
+
 subscribe('click', '[data-work] > a', async (event, el) => {
   event.preventDefault();
 
@@ -71,15 +98,12 @@ subscribe('click', '[data-work] > a', async (event, el) => {
 
   const work = workEl.dataset.work;
   const project = projectEl.dataset.project;
-  const content = await (await fetch(`./${project}-${work}.html`)).text();
-  const doc = new DOMParser().parseFromString(content, 'text/html');
-  const app = doc.querySelector(`#${project}-${work}`);
-  if (app) {
-    updateTitle(doc.querySelector('head title').innerHTML);
-    popup.innerHTML = app.outerHTML;
-  } else {
-    popup.innerHTML = '';
-  }
+  const {content, title} = await getContent(`${project}-${work}`);
+  updateTitle(title);
+  popup.innerHTML = content;
+
+  const url = new URL(el.href);
+  history.pushState({}, title, url.pathname);
 
   const {x, y} = event;
   popup.classList.remove('animated');
@@ -109,6 +133,8 @@ subscribe('click', '#popup', event => {
   document.body.classList.remove('lock');
 
   updateTitle();
+
+  history.pushState({}, DEFAULT_TITLE, DEFAULT_URL);
 });
 
 const mood = document.querySelector('#girl-blink');
@@ -125,3 +151,8 @@ addEventListener('scroll', () => {
     });
   }
 });
+
+
+window.onpopstate = function (event) {
+  // TODO: Handle browser navigation
+};
