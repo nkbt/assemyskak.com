@@ -46,6 +46,11 @@ const subscribe = (eventName, selector, callback) => {
 };
 
 
+const updateTitle = (string = 'Assem Yskak') => {
+  document.querySelector('head title').innerHTML = string;
+};
+
+
 const popup = document.querySelector('#popup');
 
 
@@ -56,14 +61,25 @@ subscribe('click', '[data-project] > a', (event, el) => {
 });
 
 
-subscribe('click', '[data-work] > a', (event, el) => {
+subscribe('click', '[data-work] > a', async (event, el) => {
   event.preventDefault();
 
   document.body.classList.add('lock');
 
-  // const work = lookup(el, '[data-work]');
-  // const project = lookup(work, '[data-project]');
-  // popup.querySelector('.content').innerHTML = `Project ${project.dataset.project}, Work ${work.dataset.work}`;
+  const workEl = lookup(el, '[data-work]');
+  const projectEl = lookup(workEl, '[data-project]');
+
+  const work = workEl.dataset.work;
+  const project = projectEl.dataset.project;
+  const content = await (await fetch(`./${project}-${work}.html`)).text();
+  const doc = new DOMParser().parseFromString(content, 'text/html');
+  const app = doc.querySelector(`#${project}-${work}`);
+  if (app) {
+    updateTitle(doc.querySelector('head title').innerHTML);
+    popup.innerHTML = app.outerHTML;
+  } else {
+    popup.innerHTML = '';
+  }
 
   const {x, y} = event;
   popup.classList.remove('animated');
@@ -71,8 +87,7 @@ subscribe('click', '[data-work] > a', (event, el) => {
     popup.style.top = `${y}px`;
     popup.style.left = `${x}px`;
     const fill = el.querySelector('.frame .fill');
-    const color = getComputedStyle(fill).fill;
-    popup.style.backgroundColor = `${rgb2hex(color)}aa`;
+    popup.style.backgroundColor = getComputedStyle(fill).fill;
     requestAnimationFrame(() => {
       popup.classList.add('animated');
       popup.style.top = `0px`;
@@ -83,7 +98,7 @@ subscribe('click', '[data-work] > a', (event, el) => {
 });
 
 
-subscribe('click', '#popup', (event, el) => {
+subscribe('click', '#popup', event => {
   event.preventDefault();
 
   const {x, y} = event;
@@ -92,6 +107,8 @@ subscribe('click', '#popup', (event, el) => {
   popup.classList.remove('opened');
 
   document.body.classList.remove('lock');
+
+  updateTitle();
 });
 
 const mood = document.querySelector('#girl-blink');

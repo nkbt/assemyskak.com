@@ -92,7 +92,7 @@ body.lock {
   height: 100%;
   min-height: 260rem;
   margin: 0 auto;
-  opacity: 1;
+  /*opacity: 1;*/
 }
 
 #girl, #girl-blink {
@@ -141,8 +141,8 @@ body.lock {
 }
 
 .lock #app {
-  opacity: 0.7;
-  filter: blur(10px);
+  /*opacity: 0.7;*/
+  /*filter: blur(10px);*/
 }
 
 .project {
@@ -330,7 +330,7 @@ body.lock {
 }
 
 [data-work="kz"] > a svg .fill {
-  fill: #eeab99;
+  fill: #f4a988;
 }
 
 [data-work="names"] > a svg {
@@ -366,11 +366,7 @@ body.lock {
 
 #popup {
   position: fixed;
-  display: flex;
   overflow: hidden;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
   width: 0;
   height: 0;
   pointer-events: none;
@@ -389,6 +385,7 @@ body.lock {
   pointer-events: all;
   opacity: 1;
   border-radius: 0;
+  overflow-y: auto;
 }
 
 #popup .content {
