@@ -379,13 +379,13 @@ body.lock {
 }
 
 #popup.opened {
+  overflow-y: auto;
   width: 100vw;
   height: 100vh;
   transition: all var(--animation-duration), border-radius 300ms ease 200ms;
   pointer-events: all;
   opacity: 1;
   border-radius: 0;
-  overflow-y: auto;
 }
 
 #popup .content {
@@ -395,7 +395,7 @@ body.lock {
 .about {
   position: absolute;
   top: 10rem;
-  right: 10rem;
+  right: 4rem;
 }
 
 .about .name {
@@ -489,4 +489,34 @@ body.lock {
 
 .photo svg .fill {
   fill: #f4a988;
+}
+
+.about .text {
+  font-size: 1.9rem;
+  font-weight: 200;
+  line-height: 1.6em;
+  position: absolute;
+  top: 28rem;
+  right: 6rem;
+  width: 46rem;
+}
+
+.about .text p:nth-child(1) {
+  font-size: 1.4em;
+  width: 10rem;
+}
+
+.about .text p:nth-child(2) {
+  width: 24rem;
+}
+
+.about .text p:nth-child(3) {
+  margin-top: 13rem;
+}
+
+.about .text p:nth-child(4) {
+}
+
+.about .text p:nth-child(5) {
+  width: 10rem;
 }
