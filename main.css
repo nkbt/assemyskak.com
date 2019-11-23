@@ -212,7 +212,7 @@ body.lock {
   margin-top: -2.5rem;
   margin-left: -2.5rem;
   animation: none;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .project.opened > a svg {
@@ -246,11 +246,11 @@ body.lock {
   font-size: 1.7rem;
   font-weight: 200;
   position: absolute;
-  bottom: -2.7rem;
-  margin-left: -1.4rem;
-  padding: 1.2rem 0.5rem;
+  bottom: -2em;
+  margin-left: -0.8em;
+  padding: 0.7em 0.3em;
   text-align: right;
-  border-radius: 0.5rem;
+  border-radius: 0.2em;
   background: #ffffffcc;
 }
 
@@ -267,7 +267,7 @@ body.lock {
   transition: all var(--animation-duration);
   text-align: center;
   opacity: 0;
-  border-radius: 8rem;
+  border-radius: 50%;
 }
 
 .opened .work > a {
@@ -519,4 +519,113 @@ body.lock {
 
 .about .text p:nth-child(5) {
   width: 10rem;
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .about .name {
+    width: 38rem;
+  }
+
+  .about .name .moon {
+    top: -1rem;
+    right: 5rem;
+    width: 9.3rem;
+  }
+
+  .about .photo {
+    top: 25rem;
+    right: 11rem;
+    width: 35rem;
+    height: 35rem;
+  }
+
+  .about .text {
+    font-size: 2.9rem;
+    top: 61rem;
+    right: 2rem;
+    width: 50rem;
+  }
+
+  .about .text p:nth-child(1) {
+    width: 50rem;
+  }
+
+  .about .text p:nth-child(2) {
+    width: 50rem;
+  }
+
+  .about .text p:nth-child(3) {
+    width: 50rem;
+    margin-top: 2rem;
+  }
+
+  .about .text p:nth-child(4) {
+    width: 50rem;
+  }
+
+  .about .text p:nth-child(5) {
+    width: 10rem;
+  }
+
+  .project[data-project="illustration"] {
+    top: 94rem;
+    left: 17rem;
+  }
+
+  .project > a {
+    width: 23rem;
+    height: 23rem;
+    margin-top: -11.5rem;
+    margin-left: -11.5rem;
+  }
+
+  .project.opened > a {
+    width: 12rem;
+    height: 12rem;
+    margin-top: -6rem;
+    margin-left: -6rem;
+  }
+
+  .moon-full span {
+    font-size: 3.8rem;
+  }
+
+  .opened [data-work="kz"] > a {
+    top: -14rem;
+    left: 18rem;
+  }
+
+  .opened [data-work="fashion"] > a {
+    top: 22rem;
+    left: -1rem;
+  }
+
+  .opened [data-work="names"] > a {
+    top: 20rem;
+    left: 37rem;
+  }
+
+  .opened .work > a {
+    width: 24rem;
+    height: 24rem;
+    margin-top: -12rem;
+    margin-left: -12rem;
+  }
+
+  .work .label {
+    font-size: 4.1rem;
+  }
 }
