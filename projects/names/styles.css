@@ -1,0 +1,92 @@
+#illustration-names {
+}
+
+#illustration-names .top {
+  padding: 10rem 0;
+  background: #ffed8a;
+}
+
+#illustration-names .head {
+  font-size: 1.6rem;
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 10em;
+  height: 10em;
+  margin: 0 auto;
+}
+
+#illustration-names .head .label {
+  font-size: 1.5em;
+  font-weight: 200;
+  position: absolute;
+  top: 3.7em;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#illustration-names .head .moon {
+  position: absolute;
+  top: 1.3em;
+  left: 50%;
+  width: 4em;
+  margin-left: -2em;
+}
+
+#illustration-names .head .moon .fill {
+  fill: #efda63;
+}
+
+#illustration-names .head .frame {
+}
+
+#illustration-names .head .frame .fill {
+  fill: #ffffff;
+}
+
+#illustration-names .head .frame .background {
+  fill: transparent;
+}
+
+#illustration-names .girl-main {
+  position: relative;
+  top: -10rem;
+  left: -13rem;
+  width: 90rem;
+  margin: 0 auto;
+}
+
+#illustration-names .girl-main img {
+  width: 100%;
+  height: 100%;
+}
+
+#illustration-names .page-name {
+  position: absolute;
+  top: 12rem;
+  left: 63rem;
+  width: 22rem;
+}
+
+#illustration-names .page-name .background {
+  transform: rotate(190deg);
+}
+
+#illustration-names .page-name .fill {
+  fill: #efda63;
+}
+
+#illustration-names .page-name .label {
+  font-size: 3rem;
+  font-weight: 200;
+  position: absolute;
+  right: 0;
+  bottom: 9rem;
+  left: 0;
+  text-align: center;
+}
+
+#illustration-names .page-name .label b {
+  font-size: 1.5em;
+}
