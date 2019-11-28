@@ -59,3 +59,10 @@ typings/
 
 # next.js build output
 .next
+
+# Google Drive "Icon" files
+Icon?
+
+# OS files
+.DS_Store*
+ehthumbs.db
