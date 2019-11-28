@@ -10,6 +10,7 @@
   font-size: 1.6rem;
   position: relative;
   z-index: 1;
+  left: 7rem;
   display: block;
   width: 10em;
   height: 10em;
@@ -51,8 +52,8 @@
 
 #illustration-fashion .girl-main {
   position: relative;
-  top: -6rem;
-  left: -20rem;
+  top: -8rem;
+  left: -15rem;
   width: 90rem;
   margin: 0 auto;
 }

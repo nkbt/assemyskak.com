@@ -180,8 +180,8 @@ body.lock {
 }
 
 .project[data-project="illustration"] {
-  top: 100rem;
-  left: 54rem;
+  top: 93rem;
+  left: 53rem;
 }
 
 .project[data-project="illustration"] > a svg .fill {
@@ -271,8 +271,8 @@ body.lock {
 }
 
 .opened .work > a {
-  width: 16rem;
-  height: 16rem;
+  width: 20rem;
+  height: 20rem;
   margin-top: -8rem;
   margin-left: -8rem;
   animation: wobble 8s infinite;
@@ -346,22 +346,22 @@ body.lock {
 }
 
 [data-work="fashion"] > a svg .fill {
-  fill: #c99dce;
+  fill: #bd86c4;
 }
 
 .opened [data-work="kz"] > a {
-  top: 6rem;
-  left: -15rem;
+  top: -10rem;
+  left: -16rem;
 }
 
 .opened [data-work="names"] > a {
-  top: 17rem;
-  left: 2rem;
+  top: 12rem;
+  left: 4rem;
 }
 
 .opened [data-work="fashion"] > a {
-  top: 4rem;
-  left: 16rem;
+  top: -13rem;
+  left: 12rem;
 }
 
 #popup {
