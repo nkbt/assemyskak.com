@@ -103,10 +103,12 @@ const workOpen = async ({project, work, x, y, fill}) => {
   });
 };
 
+
 const workClose = ({x, y}) => {
   popup.style.top = y ? `${y}px` : '0px';
   popup.style.left = x ? `${x}px` : '0px';
   popup.classList.remove('opened');
+  popup.innerHTML = '';
 
   document.body.classList.remove('lock');
   document.title = DEFAULT_TITLE;
