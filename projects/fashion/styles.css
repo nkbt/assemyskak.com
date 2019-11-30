@@ -1,16 +1,28 @@
 #illustration-fashion {
+  background: #fff;
 }
 
-#illustration-fashion .top {
-  padding: 10rem 0;
+#illustration-fashion .center {
+  position: relative;
+  width: 100em;
+  margin: 0 auto;
+}
+
+#illustration-fashion header {
+  height: 95em;
+  padding-top: 10em;
   background: #c99dce;
 }
 
+#illustration-fashion footer {
+  background: #fff;
+}
+
 #illustration-fashion .head {
-  font-size: 1.6rem;
+  font-size: 1.6em;
   position: relative;
   z-index: 1;
-  left: 7rem;
+  left: 7em;
   display: block;
   width: 10em;
   height: 10em;
@@ -52,10 +64,9 @@
 
 #illustration-fashion .girl-main {
   position: relative;
-  top: -8rem;
-  left: -15rem;
-  width: 90rem;
-  margin: 0 auto;
+  top: -8em;
+  left: -10em;
+  width: 90em;
 }
 
 #illustration-fashion .girl-main img {
@@ -65,9 +76,9 @@
 
 #illustration-fashion .page-name {
   position: absolute;
-  top: 23rem;
-  left: 71rem;
-  width: 23rem;
+  top: 23em;
+  left: 71em;
+  width: 23em;
 }
 
 #illustration-fashion .page-name .background {
@@ -79,15 +90,73 @@
 }
 
 #illustration-fashion .page-name .label {
-  font-size: 3rem;
+  font-size: 3em;
   font-weight: 200;
   position: absolute;
   right: 0;
-  bottom: 9.7rem;
+  bottom: 3.5em;
   left: 0;
   text-align: center;
 }
 
 #illustration-fashion .page-name .label b {
   font-size: 1.5em;
+}
+
+#illustration-fashion .more-girls img,
+#illustration-fashion .even-more-girls img {
+  width: 100%;
+  height: 100%;
+}
+
+#illustration-fashion .more-girls {
+  height: 116em;
+  background: #c99dce;
+}
+
+#illustration-fashion .more-girls .girl-in-blue {
+  position: absolute;
+  top: 0em;
+  left: 10em;
+  width: 25em;
+}
+
+#illustration-fashion .more-girls .girl-dancing {
+  position: absolute;
+  top: 20em;
+  left: 42em;
+  width: 20em;
+}
+
+#illustration-fashion .more-girls .girl-in-a-hat {
+  position: absolute;
+  top: -28em;
+  left: 74em;
+  width: 24em;
+}
+
+#illustration-fashion .even-more-girls {
+  height: 46em;
+  background: #fff;
+}
+
+#illustration-fashion .even-more-girls .girl-heart {
+  position: absolute;
+  top: 7em;
+  left: 6em;
+  width: 29em;
+}
+
+#illustration-fashion .even-more-girls .girl-with-a-bag-and-coffee {
+  position: absolute;
+  top: -30.26em;
+  left: 40em;
+  width: 28em;
+}
+
+#illustration-fashion .even-more-girls .girl-in-boots {
+  position: absolute;
+  top: 4em;
+  left: 65em;
+  width: 33em;
 }
