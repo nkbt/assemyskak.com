@@ -82,23 +82,50 @@ const getContent = async ident => {
 };
 
 
-const workOpen = async ({project, work, x, y, fill}) => {
+const loadCss = href => {
+  if (document.querySelector(`head link[href="${href}"]`)) {
+    return;
+  }
+  const link = document.createElement('link');
+  link.setAttribute('rel', 'stylesheet');
+  link.setAttribute('type', 'text/css');
+  let onload = () => {};
+  const loadedPromise = new Promise(resolve => {
+    onload = resolve;
+  });
+  link.onload = onload;
+  link.setAttribute('href', href);
+  document.querySelector('head').appendChild(link);
+
+  return loadedPromise;
+};
+
+
+const workOpen = ({project, work, x, y, fill}) => {
   document.body.classList.add('lock');
   popup.style.backgroundColor = fill || 'transparent';
-
-  const {content, title} = await getContent(`${project}-${work}`);
-  document.title = title;
-  popup.innerHTML = content;
 
   popup.classList.remove('animated');
   requestAnimationFrame(() => {
     popup.style.top = y ? `${y}px` : '0px';
     popup.style.left = x ? `${x}px` : '0px';
-    requestAnimationFrame(() => {
+    requestAnimationFrame(async () => {
       popup.classList.add('animated');
       popup.style.top = `0px`;
       popup.style.left = `0px`;
       popup.classList.add('opened');
+
+      const [_, {content, title}] = await Promise.all([
+        loadCss(`./${project}/${work}/styles.css`),
+        getContent(`${project}-${work}`)
+      ]);
+      document.title = title;
+      popup.innerHTML = content;
+
+      'gtag' in window && window.gtag('config', 'UA-150639557-1', {
+        'page_title': title,
+        'page_path': `./${project}-${work}.html`
+      });
     });
   });
 };
