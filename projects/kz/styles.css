@@ -1,13 +1,17 @@
 #illustration-kz {
-}
-
-#illustration-kz .top {
-  padding: 10rem 0;
   background: #f4a988;
 }
 
+#illustration-kz .top {
+  position: relative;
+  width: 100em;
+  min-height: 120em;
+  margin: 0 auto;
+  padding: 10em 0;
+}
+
 #illustration-kz .head {
-  font-size: 1.6rem;
+  font-size: 1.6em;
   position: relative;
   z-index: 1;
   display: block;
@@ -51,10 +55,9 @@
 
 #illustration-kz .girl-main {
   position: relative;
-  top: -4rem;
-  left: -13rem;
-  width: 90rem;
-  margin: 0 auto;
+  top: -4em;
+  left: -13em;
+  width: 90em;
 }
 
 #illustration-kz .girl-main img {
@@ -64,9 +67,9 @@
 
 #illustration-kz .page-name {
   position: absolute;
-  top: 9rem;
-  left: 59rem;
-  width: 26rem;
+  top: 9em;
+  left: 59em;
+  width: 26em;
 }
 
 #illustration-kz .page-name .background {
@@ -78,16 +81,53 @@
 }
 
 #illustration-kz .page-name .label {
-  font-size: 3rem;
+  font-size: 2.5em;
   font-weight: 200;
   position: absolute;
   right: 0;
-  bottom: 7rem;
+  bottom: 2.7em;
   left: 0;
   text-align: center;
   text-transform: uppercase;
 }
 
 #illustration-kz .page-name .label b {
-  font-size: 1.5em;
+  font-size: 1.6em;
+}
+
+#illustration-kz .more-girls {
+  padding: 2em;
+  text-align: center;
+  vertical-align: middle;
+  background: #fff;
+}
+
+#illustration-kz .more-girls img {
+  width: 100%;
+  height: 100%;
+}
+
+#illustration-kz .more-girls .girl-02 {
+  display: inline-block;
+  width: 30em;
+  vertical-align: middle;
+}
+
+#illustration-kz .more-girls .girl-03 {
+  display: inline-block;
+  width: 39em;
+  margin-left: 7em;
+  vertical-align: middle;
+}
+
+#illustration-kz .girl-01 {
+  position: absolute;
+  top: 63em;
+  left: 70em;
+  width: 29em;
+}
+
+#illustration-kz .girl-01 img {
+  width: 100%;
+  height: 100%;
 }

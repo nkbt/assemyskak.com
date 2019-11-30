@@ -346,7 +346,7 @@ body.lock {
 }
 
 [data-work="fashion"] > a svg .fill {
-  fill: #bd86c4;
+  fill: #c99dce;
 }
 
 .opened [data-work="kz"] > a {
@@ -392,13 +392,7 @@ body.lock {
 
 }
 
-.about {
-  position: absolute;
-  top: 10rem;
-  right: 4rem;
-}
-
-.about .name {
+.name {
   position: absolute;
   right: 10rem;
   box-sizing: border-box;
@@ -406,29 +400,35 @@ body.lock {
   padding-top: 8rem;
 }
 
-.about .name svg {
+.name svg {
 }
 
-.about .name svg .fill {
+.name svg .fill {
   fill: #333;
 }
 
-.about .name .moon {
+.name .moon {
   position: absolute;
   top: 0;
-  right: 4rem;
+  right: 4em;
   display: block;
-  width: 8rem;
+  width: 8em;
   animation: rocking 1s infinite linear;
   animation-play-state: paused;
 }
 
-.about .name .moon .fill {
+.name .moon .fill {
   fill: #efda63;
 }
 
-.about .name:hover .moon {
+.name:hover .moon {
   animation-play-state: running;
+}
+
+.about {
+  position: absolute;
+  top: 10rem;
+  right: 4rem;
 }
 
 @keyframes rocking {
@@ -628,4 +628,22 @@ body.lock {
   .work .label {
     font-size: 4.1rem;
   }
+}
+
+footer {
+  position: relative;
+  height: 20em;
+  padding-top: 5em;
+}
+
+footer .name {
+  left: 50%;
+  width: 18em;
+  margin-left: -9em;
+  padding-top: 9em;
+}
+
+footer .name .moon {
+  right: 50%;
+  margin-right: -4em;
 }
