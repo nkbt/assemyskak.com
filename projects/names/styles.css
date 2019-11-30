@@ -1,13 +1,21 @@
 #illustration-names {
-}
-
-#illustration-names .top {
-  padding: 10rem 0;
   background: #ffed8a;
 }
 
+#illustration-names .center {
+  position: relative;
+  width: 100em;
+  margin: 0 auto;
+}
+
+#illustration-names .top {
+  position: relative;
+  height: 70em;
+  padding-top: 10em;
+}
+
 #illustration-names .head {
-  font-size: 1.6rem;
+  font-size: 1.6em;
   position: relative;
   z-index: 1;
   display: block;
@@ -51,10 +59,9 @@
 
 #illustration-names .girl-main {
   position: relative;
-  top: -10rem;
-  left: -13rem;
-  width: 90rem;
-  margin: 0 auto;
+  top: -3em;
+  left: 14em;
+  width: 70em;
 }
 
 #illustration-names .girl-main img {
@@ -64,9 +71,9 @@
 
 #illustration-names .page-name {
   position: absolute;
-  top: 12rem;
-  left: 63rem;
-  width: 22rem;
+  top: 8em;
+  left: 51em;
+  width: 22em;
 }
 
 #illustration-names .page-name .background {
@@ -78,15 +85,45 @@
 }
 
 #illustration-names .page-name .label {
-  font-size: 3rem;
+  font-size: 3em;
   font-weight: 200;
   position: absolute;
   right: 0;
-  bottom: 9rem;
+  bottom: 3.2em;
   left: 0;
   text-align: center;
 }
 
 #illustration-names .page-name .label b {
   font-size: 1.5em;
+}
+
+#illustration-names .more-girls {
+  height: 84em;
+}
+
+#illustration-names .more-girls img {
+  width: 100%;
+  height: 100%;
+}
+
+#illustration-names .more-girls .girl-baian {
+  position: absolute;
+  top: 15em;
+  left: 3em;
+  width: 65em;
+}
+
+#illustration-names .more-girls .girl-aigul {
+  position: absolute;
+  top: 5em;
+  left: 66em;
+  width: 31em;
+}
+
+#illustration-names .more-girls .girl-aigul-name {
+  position: absolute;
+  top: 27em;
+  left: 57em;
+  width: 10em;
 }
