@@ -742,5 +742,61 @@ footer .name .moon {
 }
 
 .coming-soon {
+  font-size: 4em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 6em;
+  height: 0;
+  margin-top: 0;
+  margin-left: -3em;
+  transition-duration: var(--animation-duration);
+  transition-property: width, height, left, top, margin, opacity;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
   opacity: 0;
+  justify-items: center;
+}
+
+.project.opened .coming-soon {
+  width: 12em;
+  height: 4em;
+  margin-top: -2em;
+  margin-left: -6em;
+  opacity: 1;
+}
+
+.coming-soon .label {
+  font-weight: 200;
+  line-height: 1.5em;
+  overflow: hidden;
+  height: 1.5em;
+  text-align: center;
+}
+
+.project.opened .coming-soon .label {
+}
+
+.coming-soon .moon {
+  flex: 0;
+}
+
+.coming-soon .moon svg {
+  width: 0;
+  height: 0;
+  transition-duration: var(--animation-duration);
+  transition-property: width, height;
+}
+
+.project.opened .coming-soon .moon svg {
+  width: 3em;
+  height: 3em;
+}
+
+.project[data-project="media"] .coming-soon {
+  font-size: 2em;
 }
