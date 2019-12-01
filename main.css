@@ -139,43 +139,8 @@ body.lock {
   }
 }
 
-.lock #app {
-  /*opacity: 0.7;*/
-  /*filter: blur(10px);*/
-}
-
 .project {
   position: absolute;
-}
-
-.moon-full {
-  position: relative;
-  display: flex;
-  align-content: center;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.moon-full svg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.moon-full .fill {
-  fill: #f1f2f3;
-}
-
-.moon-full span {
-  font-size: 3.3rem;
-  font-weight: 200;
-  position: relative;
-  transition: opacity var(--animation-duration);
-  text-decoration: none;
-  text-transform: lowercase;
 }
 
 .project[data-project="illustration"] {
@@ -187,14 +152,39 @@ body.lock {
   fill: #efda63;
 }
 
-.project > a {
-  position: absolute;
+.project[data-project="illustration"] > a {
   width: 20rem;
   height: 20rem;
   margin-top: -10rem;
   margin-left: -10rem;
-  transition: all var(--animation-duration);
+}
+
+.project > a {
+  position: absolute;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform var(--animation-duration), opacity var(--animation-duration);
   opacity: 1;
+}
+
+.project > a > svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.project > a .label {
+  font-size: 3.3rem;
+  font-weight: 200;
+  position: relative;
+  transition: opacity var(--animation-duration);
+  text-decoration: none;
+  text-transform: lowercase;
 }
 
 .project > a svg {
@@ -206,10 +196,7 @@ body.lock {
 }
 
 .project.opened > a {
-  width: 5rem;
-  height: 5rem;
-  margin-top: -2.5rem;
-  margin-left: -2.5rem;
+  transform: scale(0.4);
   animation: none;
   opacity: 0.7;
 }
@@ -222,7 +209,7 @@ body.lock {
   animation-play-state: paused;
 }
 
-.project.opened > a span {
+.project.opened > a .label {
   opacity: 0;
 }
 
@@ -263,7 +250,8 @@ body.lock {
   height: 0;
   margin-top: 0;
   margin-left: 0;
-  transition: all var(--animation-duration);
+  transition-duration: var(--animation-duration);
+  transition-property: width, height, left, top, margin, opacity;
   text-align: center;
   opacity: 0;
   border-radius: 50%;
@@ -374,14 +362,14 @@ body.lock {
 }
 
 #popup.animated {
-  transition: all var(--animation-duration), border-radius 300ms ease 0ms;
+  transition: border-radius 300ms ease 0ms, width var(--animation-duration), height var(--animation-duration), top var(--animation-duration), left var(--animation-duration), opacity var(--animation-duration);
 }
 
 #popup.opened {
   overflow-y: auto;
   width: 100vw;
   height: 100vh;
-  transition: all var(--animation-duration), border-radius 300ms ease 200ms;
+  transition: border-radius 300ms ease 200ms, width var(--animation-duration), height var(--animation-duration), top var(--animation-duration), left var(--animation-duration), opacity var(--animation-duration);
   pointer-events: all;
   opacity: 1;
   border-radius: 0;
@@ -591,14 +579,7 @@ body.lock {
     margin-left: -11.5rem;
   }
 
-  .project.opened > a {
-    width: 12rem;
-    height: 12rem;
-    margin-top: -6rem;
-    margin-left: -6rem;
-  }
-
-  .moon-full span {
+  .project > a .label {
     font-size: 3.8rem;
   }
 
@@ -674,6 +655,10 @@ footer .name .moon {
   transform: rotate(90deg);
 }
 
+.moon-270 svg {
+  transform: rotate(270deg);
+}
+
 .contact {
   position: absolute;
   top: 200em;
@@ -696,7 +681,6 @@ footer .name .moon {
 .contact .social {
   padding-top: 3em;
   text-align: -webkit-right;
-  /* padding-left: 2em; */
 }
 
 .contact .social a {
@@ -717,11 +701,46 @@ footer .name .moon {
   fill: #c99dce;
 }
 
-.contact .instagram {
+.project[data-project="work"] {
+  top: 158rem;
+  left: 47rem;
 }
 
-.contact .whatsapp {
+.project[data-project="work"] > a {
+  width: 30em;
+  height: 30em;
+  margin-top: -15em;
+  margin-left: -15em;
 }
 
-.contact .email {
+.project[data-project="work"] > a svg .fill {
+  fill: #efda63;
+}
+
+.project[data-project="work"] > a .label {
+  font-size: 6em;
+}
+
+.project[data-project="media"] {
+  top: 206em;
+  left: 20em;
+}
+
+.project[data-project="media"] > a {
+  width: 14em;
+  height: 14em;
+  margin-top: -7em;
+  margin-left: -7em;
+}
+
+.project[data-project="media"] > a svg .fill {
+  fill: #efda63;
+}
+
+.project[data-project="media"] > a .label {
+  font-size: 2.6em;
+}
+
+.coming-soon {
+  opacity: 0;
 }
