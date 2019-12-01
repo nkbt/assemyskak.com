@@ -4,37 +4,10 @@
 }
 
 .moons .moon {
-  margin: 1em;
-}
-
-.moon {
-  display: block;
   width: 50px;
   height: 50px;
+  margin: 1em;
   cursor: pointer;
-  transition: transform 100ms;
-  animation: rocking 1s infinite linear;
-  animation-play-state: paused;
-}
-
-.moon .fill {
-  fill: #efda63;
-}
-
-.moon:hover {
-  animation-play-state: running;
-}
-
-.moon-50 svg {
-  transform: rotate(50deg);
-}
-
-.moon-320 svg {
-  transform: rotate(320deg);
-}
-
-.moon-90 svg {
-  transform: rotate(90deg);
 }
 
 .name {

@@ -90,9 +90,8 @@ body.lock {
   width: 100vw;
   max-width: 100rem;
   height: 100%;
-  min-height: 260rem;
+  min-height: 240rem;
   margin: 0 auto;
-  /*opacity: 1;*/
 }
 
 #girl, #girl-blink {
@@ -645,4 +644,84 @@ footer .name {
 footer .name .moon {
   right: 50%;
   margin-right: -4em;
+}
+
+.moon {
+  position: relative;
+  display: block;
+  transition: transform 100ms;
+  animation: rocking 1s infinite linear;
+  animation-play-state: paused;
+}
+
+.moon .fill {
+  fill: #efda63;
+}
+
+.moon:hover {
+  animation-play-state: running;
+}
+
+.moon-50 svg {
+  transform: rotate(50deg);
+}
+
+.moon-320 svg {
+  transform: rotate(320deg);
+}
+
+.moon-90 svg {
+  transform: rotate(90deg);
+}
+
+.contact {
+  position: absolute;
+  top: 200em;
+  right: 16em;
+}
+
+.contact .moon {
+  width: 17em;
+  height: 17em;
+}
+
+.contact .label {
+  font-size: 4em;
+  font-weight: 200;
+  position: absolute;
+  top: 1.8em;
+  left: 2.3em;
+}
+
+.contact .social {
+  padding-top: 3em;
+  text-align: -webkit-right;
+  /* padding-left: 2em; */
+}
+
+.contact .social a {
+  margin: 1.2em;
+}
+
+.contact .social a svg {
+  width: 5em;
+  height: 5em;
+}
+
+.contact .social a svg .fill {
+  transition: fill var(--animation-duration);
+  fill: #f4a988;
+}
+
+.contact .social a:hover svg .fill {
+  fill: #c99dce;
+}
+
+.contact .instagram {
+}
+
+.contact .whatsapp {
+}
+
+.contact .email {
 }
