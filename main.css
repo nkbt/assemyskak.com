@@ -800,3 +800,57 @@ footer .name .moon {
 .project[data-project="media"] .coming-soon {
   font-size: 2em;
 }
+
+.calendar {
+  position: absolute;
+  top: 226rem;
+  left: 30rem;
+}
+
+.calendar > a {
+  position: absolute;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 20em;
+  height: 20em;
+  margin-top: -10em;
+  margin-left: -10em;
+  transition: transform var(--animation-duration), opacity var(--animation-duration);
+  opacity: 1;
+}
+
+.calendar > a > svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.calendar > a .label {
+  font-size: 3.4rem;
+  font-weight: 200;
+  position: relative;
+  transition: opacity var(--animation-duration);
+  text-decoration: none;
+  text-transform: lowercase;
+  text-align: center;
+}
+.calendar > a .label b {
+  display: block;
+  font-size: 1.2em;
+}
+
+.calendar > a svg {
+  animation: wobble 5s infinite;
+}
+
+.calendar > a:hover svg {
+  animation-play-state: paused;
+}
+.calendar > a svg .fill {
+  fill: #efda63;
+}

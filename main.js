@@ -196,3 +196,13 @@ window.onpopstate = function (event) {
     workClose({x, y});
   }
 };
+
+
+subscribe('click', '.calendar > a', event => {
+  event.preventDefault();
+  'gtag' in window && window.gtag('config', 'UA-150639557-1', {
+    'page_title': 'Calendar 2020',
+    'page_path': `./Calendar2020.pdf`
+  });
+  window.open('./Calendar2020.pdf');
+});
