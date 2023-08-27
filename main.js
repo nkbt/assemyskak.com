@@ -122,7 +122,7 @@ const workOpen = ({project, work, x, y, fill}) => {
       document.title = title;
       popup.innerHTML = content;
 
-      'gtag' in window && window.gtag('config', 'G-NGPBJLF8S8', {
+      'gtag' in window && window.gtag('config', 'G-XP8VGZV80X', {
         'page_title': title,
         'page_path': `./${project}-${work}.html`
       });
@@ -200,7 +200,7 @@ window.onpopstate = function (event) {
 
 subscribe('click', '.calendar > a', event => {
   event.preventDefault();
-  'gtag' in window && window.gtag('config', 'G-NGPBJLF8S8', {
+  'gtag' in window && window.gtag('config', 'G-XP8VGZV80X', {
     'page_title': 'Calendar 2020',
     'page_path': `./Calendar2020.pdf`
   });
